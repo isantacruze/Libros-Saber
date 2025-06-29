@@ -1,11 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Libros & Saber</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Libros & Saber</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    
+  <header>
+    <h1>Libros & Saber</h1>
+    <button class="menu-toggle" aria-label="Abrir menú">&#9776;</button>
+    <nav class="nav-menu">
+      <ul>
+        <li><a href="#">Inicio</a></li>
+        <li>
+          <a href="#">Catálogo de Libros</a>
+          <ul>
+            <li><a href="#">Buscar por Título</a></li>
+            <li><a href="#">Buscar por Autor</a></li>
+            <li><a href="#">Buscar por Categoría</a></li>
+            <li><a href="#">Buscar por Etiquetas</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Mi Cuenta</a>
+          <ul>
+            <li><a href="#">Historial de Préstamos</a></li>
+            <li><a href="#">Libros Reservados</a></li>
+            <li><a href="#">Perfil de Usuario</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Servicios</a>
+          <ul>
+            <li><a href="#">Reservar Libro</a></li>
+            <li><a href="#">Reportar Problema</a></li>
+            <li><a href="#">Solicitar Nuevo Título</a></li>
+          </ul>
+        </li>
+        <li>
+            <a href="#">Area Administrativa</a>
+            <ul>
+              <li><a href="#">Gestion de Usuarios</a></li>
+              <li><a href="#">Gestion de Libros</a></li>
+              <li><a href="#">Gestion de Prestamos y Devoluciones</a></li>
+              <li><a href="#">Informes de Uso / Estadisticas</a></li>
+              <li><a href="#">Configuracion del sistema</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">Ayuda / Preguntas Frecuentes</a>
+            <ul>
+                <li><a href="#">¿como registrarse?</a></li>
+                <li><a href="#">¿como buscar libros?</a></li>
+                <li><a href="#">¿como reservar o renovar?</a></li>
+                <li><a href="#">Contacto con soporte</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">Contáctanos</a>
+            <ul>
+                <li><a href="#">Teléfono:3217606449</a></li>
+                <li><a href="#">Email: isaac@gmail.com</a></li>
+                <li><a href="#">Dirección: cra 8 # 101-33</a></li>
+            </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <p>Aqui se muestra el contenido principal según la subsección seleccionada.</p>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Libros & Saber</p>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav-menu');
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
