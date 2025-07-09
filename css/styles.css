@@ -238,3 +238,41 @@ h1 {
     padding: 0.75rem;
   }
 }
+
+/* Accesibilidad: texto solo para lectores de pantalla */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Contenedor del campo de búsqueda */
+.busqueda-contenedor {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* Campo de búsqueda */
+#busqueda-libros {
+  width: 100%;
+  max-width: 25rem;
+  padding: 0.625rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: var(--radio-borde);
+  font-size: 1rem;
+  color: var(--color-texto);
+  transition: border-color 0.3s ease;
+}
+
+#busqueda-libros:focus {
+  border-color: var(--color-primario);
+  outline: none;
+}
+
