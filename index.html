@@ -6,11 +6,11 @@
   <title>Libros & Saber</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
-<script src="main.js"></script>
 <body>
+
   <header>
     <h1>Libros & Saber</h1>
-    <button class="menu-toggle" aria-label="Abrir menú">&#9776;</button>
+    <button class="menu-toggle btn" aria-label="Abrir menú">&#9776;</button>
     <nav class="nav-menu">
       <ul>
         <li><a href="#">Inicio</a></li>
@@ -40,52 +40,66 @@
           </ul>
         </li>
         <li>
-            <a href="#">Area Administrativa</a>
-            <ul>
-              <li><a href="#">Gestion de Usuarios</a></li>
-              <li><a href="#">Gestion de Libros</a></li>
-              <li><a href="#">Gestion de Prestamos y Devoluciones</a></li>
-              <li><a href="#">Informes de Uso / Estadisticas</a></li>
-              <li><a href="#">Configuracion del sistema</a></li>
-            </ul>
+          <a href="#">Área Administrativa</a>
+          <ul>
+            <li><a href="#">Gestión de Usuarios</a></li>
+            <li><a href="#">Gestión de Libros</a></li>
+            <li><a href="#">Préstamos y Devoluciones</a></li>
+            <li><a href="#">Informes / Estadísticas</a></li>
+            <li><a href="#">Configuración del sistema</a></li>
+          </ul>
         </li>
         <li>
-            <a href="#">Ayuda / Preguntas Frecuentes</a>
-            <ul>
-                <li><a href="#">¿como registrarse?</a></li>
-                <li><a href="#">¿como buscar libros?</a></li>
-                <li><a href="#">¿como reservar o renovar?</a></li>
-                <li><a href="#">Contacto con soporte</a></li>
-            </ul>
+          <a href="#">Ayuda</a>
+          <ul>
+            <li><a href="#">¿Cómo registrarse?</a></li>
+            <li><a href="#">¿Cómo buscar libros?</a></li>
+            <li><a href="#">¿Cómo reservar o renovar?</a></li>
+            <li><a href="#">Soporte</a></li>
+          </ul>
         </li>
         <li>
-            <a href="#">Contáctanos</a>
-            <ul>
-                <li><a href="#">Teléfonos:3217606449, 3242988545</a></li>
-                <li><a href="#">Email: isaacsantacruz58@gmail.com, angie@gmail.com</a></li>
-                <li><a href="#">Dirección: cra 8 # 101-33</a></li>
-            </ul>
+          <a href="#">Contáctanos</a>
+          <ul>
+            <li><a href="#">Tel: 3217606449, 3242988545</a></li>
+            <li><a href="#">Email: isaacsantacruz58@gmail.com</a></li>
+            <li><a href="#">Dirección: Cra 8 # 101-33</a></li>
+          </ul>
         </li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <p>CONTENIDO PRINCIPAL</p>
     <section id="gestion-libros">
       <h2>Gestión de Libros</h2>
       <form id="libro-form">
-        <input type="text" id="titulo" placeholder="Título" required />
-        <input type="text" id="autor" placeholder="Autor" required />
-        <input type="number" id="año" placeholder="Año de publicación" required />
-        <label>
-          <input type="checkbox" id="disponible" />
+        <label for="titulo">
+          Título:
+          <input type="text" id="titulo" name="titulo" placeholder="Título" required />
+        </label>
+
+        <label for="autor">
+          Autor:
+          <input type="text" id="autor" name="autor" placeholder="Autor" required />
+        </label>
+
+        <label for="año">
+          Año:
+          <input type="number" id="año" name="año" placeholder="Año de publicación" required />
+        </label>
+
+        <label for="disponible" class="checkbox-label">
+          <input type="checkbox" id="disponible" name="disponible" />
           ¿Disponible?
         </label>
-        <button type="submit" id="guardar">Guardar</button>
+
+        <button type="submit" class="btn">Guardar libro</button>
       </form>
 
-      <ul id="lista-libros"></ul>
+      <ul id="lista-libros">
+        <!-- Aquí se insertarán dinámicamente los libros -->
+      </ul>
     </section>
   </main>
 
@@ -93,6 +107,7 @@
     <p>&copy; 2025 Libros & Saber</p>
   </footer>
 
+  <script src="main.js"></script>
   <script>
     const toggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('.nav-menu');
@@ -100,6 +115,6 @@
       nav.classList.toggle('active');
     });
   </script>
-  <script src="main.js"></script>
+
 </body>
 </html>
