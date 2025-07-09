@@ -6,6 +6,7 @@
   <title>Libros & Saber</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
+<script src="main.js"></script>
 <body>
   <header>
     <h1>Libros & Saber</h1>
@@ -60,8 +61,8 @@
         <li>
             <a href="#">Contáctanos</a>
             <ul>
-                <li><a href="#">Teléfono:3217606449</a></li>
-                <li><a href="#">Email: isaac@gmail.com</a></li>
+                <li><a href="#">Teléfonos:3217606449, 3242988545</a></li>
+                <li><a href="#">Email: isaac@gmail.com, angie@gmail.com</a></li>
                 <li><a href="#">Dirección: cra 8 # 101-33</a></li>
             </ul>
         </li>
@@ -70,7 +71,22 @@
   </header>
 
   <main>
-    <p>Aqui se muestra el contenido principal según la subsección seleccionada.</p>
+    <p>Aqui se muestra el contenido principal</p>
+    <section id="gestion-libros">
+      <h2>Gestión de Libros</h2>
+      <form id="libro-form">
+        <input type="text" id="titulo" placeholder="Título" required />
+        <input type="text" id="autor" placeholder="Autor" required />
+        <input type="number" id="año" placeholder="Año de publicación" required />
+        <label>
+          <input type="checkbox" id="disponible" />
+          ¿Disponible?
+        </label>
+        <button type="submit" id="guardar">Guardar</button>
+      </form>
+
+      <ul id="lista-libros"></ul>
+    </section>
   </main>
 
   <footer>
@@ -84,5 +100,6 @@
       nav.classList.toggle('active');
     });
   </script>
+  <script src="main.js"></script>
 </body>
 </html>

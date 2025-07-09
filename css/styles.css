@@ -1,0 +1,226 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Encabezado */
+h1 {
+  color: #2c3e50;
+  text-align: center;
+}
+
+/* Botones generales */
+button {
+  background-color: #3498db;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 5px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+/* Sección de gestión de libros */
+#gestion-libros {
+  max-width: 600px;
+  margin: 40px auto;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#gestion-libros h2 {
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Formulario */
+#libro-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#libro-form input[type="text"],
+#libro-form input[type="number"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+#libro-form label {
+  font-size: 14px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Lista de libros */
+#lista-libros {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+#lista-libros li {
+  background-color: #ecf0f1;
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 8px;
+  line-height: 1.6;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Botones dentro de la lista */
+#lista-libros button {
+  padding: 6px 12px;
+  font-size: 14px;
+}
+
+
+/* modelo responsive para pantallas pequeñas */
+/* --- NAVBAR --- */
+.nav-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  background-color: #fff;
+}
+
+.nav-menu li {
+  position: relative;
+}
+
+.nav-menu a {
+  display: block;
+  padding: 10px 15px;
+  color: #2c3e50;
+  text-decoration: none;
+}
+
+.nav-menu li ul {
+  display: none;
+  position: absolute;
+  background-color: #ecf0f1;
+  min-width: 180px;
+  z-index: 10;
+  border-radius: 4px;
+}
+
+.nav-menu li:hover ul {
+  display: block;
+}
+
+.nav-menu li ul li a {
+  padding: 10px;
+  color: #2c3e50;
+  text-align: left;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: #2c3e50;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    background-color: #fff;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    z-index: 999;
+    border-top: 1px solid #ccc;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-menu ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding: 0;
+  }
+
+  .nav-menu li {
+    width: 100%;
+  }
+
+  .nav-menu li ul {
+    position: static;
+    display: none;
+    width: 100%;
+    background-color: #f9f9f9;
+  }
+
+  .nav-menu li:hover ul {
+    display: block;
+  }
+
+  .nav-menu a {
+    width: 100%;
+    padding: 12px 20px;
+    border-bottom: 1px solid #ddd;
+  }
+}
+/* estilo responsive para la seccion formulario */
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  #gestion-libros {
+    padding: 15px;
+    margin: 20px 10px;
+  }
+
+  #libro-form input,
+  #libro-form button {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  #lista-libros li {
+    font-size: 15px;
+  }
+
+  button {
+    padding: 10px;
+    font-size: 15px;
+  }
+
+  #libro-form label {
+    font-size: 15px;
+  }
+}

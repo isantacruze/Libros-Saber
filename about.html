@@ -1,10 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <title>Acerca de Libros & Saber</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Acerca de - Libros & Saber</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    
+  <header>
+    <h1>Libros & Saber</h1>
+    <button class="menu-toggle" aria-label="Abrir menú">&#9776;</button>
+    <nav class="nav-menu">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="#">Catálogo</a></li>
+        <li><a href="#">Servicios</a></li>
+        <li><a href="#">Ayuda</a></li>
+        <li><a href="about.html">Acerca de</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="acerca">
+      <h2>Acerca de Libros & Saber</h2>
+      <p><strong>Libros & Saber</strong> es una plataforma web desarrollada como parte de un proyecto educativo que busca facilitar la gestión y el acceso al conocimiento a través de una biblioteca virtual.</p>
+
+      <p>Este sitio permite registrar, actualizar y administrar libros de forma simple, así como consultar información relevante para los usuarios y administradores del sistema.</p>
+
+      <p>El objetivo principal es ofrecer una experiencia moderna, accesible y funcional para estudiantes, docentes y administradores.</p>
+
+      <h3>Desarrollado por</h3>
+      <ul>
+        <li>Isaac Santacruz Erazo</li>
+        <li>Tecnólogo en Análisis y Desarrollo de Software - SENA</li>
+        <li>Angie Arenas Oviedo</li>
+        <li>Tecnóloga en Análisis y Desarrollo de Software - SENA</li>
+        <li>Bogotá, Colombia</li>
+      </ul>
+
+      <p>Para más información o sugerencias, nos pueden contactar a los correos <a href="mailto:isaac@gmail.com">isaac@gmail.com</a>, <a href="mailto:angie@gmail.com">angie@gmail.com</a>.</p>
+        <p>¡Gracias por visitar Libros & Saber!</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Libros & Saber</p>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav-menu');
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>

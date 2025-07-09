@@ -15,16 +15,16 @@
   },
   {
     "id": 3,
-    "titulo": "La sombra del viento",
-    "autor": "Carlos Ruiz Zafón",
-    "anio": 2001,
+    "titulo": "El Principito",
+    "autor": "Antoine de Saint-Exupéry",
+    "anio": 1943,
     "disponible": false
   }, 
   {
     "id": 4,
-    "titulo": "1984",
-    "autor": "George Orwell",
-    "anio": 1949,
+    "titulo": "El Hobbit",
+    "autor": "J.R.R. Tolkien",
+    "anio": 1937,
     "disponible": true
   },
   {
