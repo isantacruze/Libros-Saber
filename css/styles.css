@@ -90,7 +90,7 @@ button:hover {
 
 
 /* modelo responsive para pantallas pequeñas */
-/* --- NAVBAR --- */
+/* Menú de navegación */
 .nav-menu ul {
   list-style: none;
   padding: 0;
@@ -144,7 +144,7 @@ button:hover {
   right: 20px;
 }
 
-/* --- Responsive --- */
+/* estilo responsive para la pag principal */
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
