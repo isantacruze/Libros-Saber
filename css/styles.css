@@ -1,95 +1,108 @@
+:root {
+  --color-primario: #3498db;
+  --color-hover: #2980b9;
+  --color-fondo: #f4f4f4;
+  --color-texto: #2c3e50;
+  --sombra-suave: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --radio-borde: 8px;
+  --fuente-base: 1rem;
+}
+
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  background-color: var(--color-fondo);
   margin: 0;
-  padding: 20px;
+  padding: 1.25rem;
+  font-size: var(--fuente-base);
 }
 
 /* Encabezado */
 h1 {
-  color: #2c3e50;
+  color: var(--color-texto);
   text-align: center;
 }
 
-/* Botones generales */
-button {
-  background-color: #3498db;
+/* Botones reutilizables */
+.btn {
+  background-color: var(--color-primario);
   color: white;
-  padding: 10px 20px;
+  padding: 0.625rem 1.25rem;
   border: none;
-  border-radius: 8px;
+  border-radius: var(--radio-borde);
   cursor: pointer;
-  margin: 5px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-button:hover {
-  background-color: #2980b9;
+.btn:hover {
+  background-color: var(--color-hover);
+}
+
+.btn:focus {
+  outline: 2px solid var(--color-primario);
+  outline-offset: 2px;
 }
 
 /* Sección de gestión de libros */
 #gestion-libros {
-  max-width: 600px;
-  margin: 40px auto;
-  background-color: #ffffff;
-  padding: 20px;
+  max-width: 37.5rem;
+  margin: 2.5rem auto;
+  background-color: #fff;
+  padding: 1.25rem;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--sombra-suave);
 }
 
 #gestion-libros h2 {
-  color: #2c3e50;
+  color: var(--color-texto);
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 
 /* Formulario */
 #libro-form {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 0.75rem;
 }
 
 #libro-form input[type="text"],
 #libro-form input[type="number"] {
-  padding: 10px;
+  padding: 0.625rem;
   border: 1px solid #ccc;
   border-radius: 6px;
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 #libro-form label {
-  font-size: 14px;
+  font-size: 0.9rem;
   color: #333;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 0.5rem;
 }
 
 /* Lista de libros */
 #lista-libros {
-  list-style-type: none;
+  list-style: none;
   padding: 0;
-  margin-top: 20px;
+  margin-top: 1.25rem;
 }
 
 #lista-libros li {
   background-color: #ecf0f1;
-  margin-bottom: 10px;
-  padding: 15px;
-  border-radius: 8px;
+  margin-bottom: 0.625rem;
+  padding: 0.9375rem;
+  border-radius: var(--radio-borde);
   line-height: 1.6;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  font-size: 1rem;
 }
 
-/* Botones dentro de la lista */
-#lista-libros button {
-  padding: 6px 12px;
-  font-size: 14px;
+#lista-libros .btn {
+  font-size: 0.875rem;
+  padding: 0.5rem 0.75rem;
 }
 
-
-/* modelo responsive para pantallas pequeñas */
 /* Menú de navegación */
 .nav-menu ul {
   list-style: none;
@@ -98,7 +111,7 @@ button:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
+  gap: 0.625rem;
   background-color: #fff;
 }
 
@@ -108,9 +121,15 @@ button:hover {
 
 .nav-menu a {
   display: block;
-  padding: 10px 15px;
-  color: #2c3e50;
+  padding: 0.625rem 0.9375rem;
+  color: var(--color-texto);
   text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-menu a:focus {
+  outline: 2px solid var(--color-primario);
+  outline-offset: 2px;
 }
 
 .nav-menu li ul {
@@ -127,24 +146,25 @@ button:hover {
 }
 
 .nav-menu li ul li a {
-  padding: 10px;
-  color: #2c3e50;
+  padding: 0.625rem;
+  color: var(--color-texto);
   text-align: left;
 }
 
+/* Ícono de menú móvil */
 .menu-toggle {
   display: none;
-  font-size: 28px;
+  font-size: 1.75rem;
   background: none;
   border: none;
-  color: #2c3e50;
+  color: var(--color-texto);
   cursor: pointer;
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 1.25rem;
+  right: 1.25rem;
 }
 
-/* estilo responsive para la pag principal */
+/* Responsive: Página principal */
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
@@ -156,7 +176,7 @@ button:hover {
     background-color: #fff;
     width: 100%;
     position: absolute;
-    top: 60px;
+    top: 3.75rem;
     left: 0;
     z-index: 999;
     border-top: 1px solid #ccc;
@@ -170,7 +190,6 @@ button:hover {
     flex-direction: column;
     align-items: flex-start;
     gap: 0;
-    padding: 0;
   }
 
   .nav-menu li {
@@ -179,48 +198,43 @@ button:hover {
 
   .nav-menu li ul {
     position: static;
-    display: none;
-    width: 100%;
     background-color: #f9f9f9;
-  }
-
-  .nav-menu li:hover ul {
-    display: block;
   }
 
   .nav-menu a {
     width: 100%;
-    padding: 12px 20px;
+    padding: 0.75rem 1.25rem;
     border-bottom: 1px solid #ddd;
   }
 }
-/* estilo responsive para la seccion formulario */
+
+/* Responsive: Sección de formulario */
 @media (max-width: 600px) {
   body {
-    padding: 10px;
+    padding: 0.625rem;
   }
 
   #gestion-libros {
-    padding: 15px;
-    margin: 20px 10px;
+    padding: 1rem;
+    margin: 1.25rem 0.625rem;
   }
 
   #libro-form input,
-  #libro-form button {
+  #libro-form .btn {
     width: 100%;
-    font-size: 16px;
+    font-size: 1rem;
   }
 
   #lista-libros li {
-    font-size: 15px;
-  }
-
-  button {
-    padding: 10px;
-    font-size: 15px;
+    font-size: 0.95rem;
   }
 
   #libro-form label {
-    font-size: 15px;
+    font-size: 0.95rem;
+  }
+
+  .btn {
+    font-size: 1rem;
+    padding: 0.75rem;
   }
 }
