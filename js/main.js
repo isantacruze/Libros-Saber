@@ -1,4 +1,4 @@
-// Datos temporales simulados
+// Datos temporales simulados desde almacenamiento local
 let libros = JSON.parse(localStorage.getItem("libros")) || [
   { id: 1, titulo: "Cien años de soledad", autor: "Gabriel García Márquez", año: 1967, disponible: true },
   { id: 2, titulo: "Don Quijote de la Mancha", autor: "Miguel de Cervantes", año: 1605, disponible: true },
@@ -53,9 +53,9 @@ function agregarLibro(event) {
 
 // Eliminar libro
 function eliminarLibro(id) {
-  if (!confirm("¿Estás seguro de que quieres eliminar este libro?")) {
-    return;
-  }
+  const confirmacion = confirm("¿Estás seguro de que deseas eliminar este libro?");
+  if (!confirmacion) return;
+  
   libros = libros.filter(libro => libro.id !== id);
   mostrarLibros();
 }
@@ -69,9 +69,9 @@ function editarLibro(id) {
   document.getElementById("disponible").checked = libro.disponible;
 
   // Cambiar el botón de guardar a actualizar
-  document.getElementById("guardar").setAttribute("data-id", id);
-  document.getElementById("guardar").innerText = "Actualizar";
-  document.getElementById("guardar").onclick = (e) => actualizarLibro(e, id);
+  const botonGuardar = document.getElementById("guardar");
+  botonGuardar.innerText = "Actualizar";
+  botonGuardar.onclick = (e) => actualizarLibro(e, id);
 }
 
 // Actualizar libro
@@ -92,8 +92,9 @@ function actualizarLibro(event, id) {
   );
 
   mostrarLibros();
-  document.getElementById("guardar").innerText = "Guardar";
-  document.getElementById("guardar").onclick = agregarLibro;
+  const botonGuardar = document.getElementById("guardar");
+  botonGuardar.innerText = "Guardar";
+  botonGuardar.onclick = agregarLibro;
   document.getElementById("libro-form").reset();
 }
 
